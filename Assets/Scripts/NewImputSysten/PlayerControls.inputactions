@@ -15,6 +15,36 @@
                     "interactions": "",
                     "initialStateCheck": true,
                     "priority": 0
+                },
+                {
+                    "name": "Jump",
+                    "type": "Button",
+                    "id": "1d8b07a0-f8ee-4ecf-ac58-6acb47319fcd",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false,
+                    "priority": 0
+                },
+                {
+                    "name": "PunchLeft",
+                    "type": "Button",
+                    "id": "ff6c593d-bdfc-4515-9ed7-94f802d56848",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false,
+                    "priority": 0
+                },
+                {
+                    "name": "PunchRight",
+                    "type": "Button",
+                    "id": "4ec5010f-de6b-4f8e-8e4c-2e1d637101aa",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false,
+                    "priority": 0
                 }
             ],
             "bindings": [
@@ -41,7 +71,7 @@
                     "isPartOfComposite": false
                 },
                 {
-                    "name": "up",
+                    "name": "Up",
                     "id": "b9f4174f-b5e2-4236-ae32-5cb38d7efbe3",
                     "path": "<Keyboard>/w",
                     "interactions": "",
@@ -52,7 +82,7 @@
                     "isPartOfComposite": true
                 },
                 {
-                    "name": "down",
+                    "name": "Down",
                     "id": "b1d5ce22-520c-4b2f-926b-295b6655a6d3",
                     "path": "<Keyboard>/s",
                     "interactions": "",
@@ -63,7 +93,7 @@
                     "isPartOfComposite": true
                 },
                 {
-                    "name": "left",
+                    "name": "Left",
                     "id": "cc9d89ff-6dc2-4595-9f18-07c09019e536",
                     "path": "<Keyboard>/a",
                     "interactions": "",
@@ -74,7 +104,7 @@
                     "isPartOfComposite": true
                 },
                 {
-                    "name": "right",
+                    "name": "Right",
                     "id": "90cfd1f9-f079-4cc8-ae05-48de27195a3b",
                     "path": "<Keyboard>/d",
                     "interactions": "",
@@ -83,6 +113,61 @@
                     "action": "Move",
                     "isComposite": false,
                     "isPartOfComposite": true
+                },
+                {
+                    "name": "",
+                    "id": "6f728e0d-1e30-41a3-9d61-e074ba4ef0f6",
+                    "path": "<Keyboard>/space",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Jump",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "7126be01-3af6-4d5d-96bd-4a268e705089",
+                    "path": "<Mouse>/leftButton",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "PunchLeft",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "96a1eb5b-3dcf-41db-a198-a4d9026ef8eb",
+                    "path": "<Keyboard>/c",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "PunchLeft",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "23cc0953-1cc8-44fb-9dac-7846ddde23f6",
+                    "path": "<Mouse>/rightButton",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "PunchRight",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "7855d08e-a1fb-434b-ae3b-a9360cddb440",
+                    "path": "<Keyboard>/v",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "PunchRight",
+                    "isComposite": false,
+                    "isPartOfComposite": false
                 }
             ]
         }

@@ -2,34 +2,50 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-[RequireComponent(typeof(CharacterController))]
+[RequireComponent(typeof(Animator))]
+[RequireComponent(typeof(PlayerInput))]
 public class PlayerMovement : MonoBehaviour
 {
-    [SerializeField] private float speed = 5f;
-
-    private CharacterController controller;
-    private Vector2 moveInput;
+    //[Header("Controle De Velocidade")]
+    //[SerializeField] private float speed = 5f;
+    //[Header("Força De Pulo")]
+    //[SerializeField] private float ForcaPulo = 5f;
+    //private Rigidbody rb;
+    //private float moveInput;
+    //private float moveInputz;
+    private Vector2 inputMovimento;
+    private Animator animator;
 
     private void Awake()
     {
-        controller = GetComponent<CharacterController>();
+        animator = GetComponent<Animator>();
+        //rb = GetComponent<Rigidbody>();
     }
 
     // Recebe o movimento do New Input System
     public void OnMove(InputValue value)
     {
-        moveInput = value.Get<Vector2>();
+        inputMovimento = value.Get<Vector2>();
     }
+    public void OnPunchLeft()
+    {
+        animator.SetTrigger("AtacarL");
+    }
+    public void OnPunchRight()
+    {
+        animator.SetTrigger("AtacarR");
+    }
+    //private void FixedUpdate()
+    //{
+    //    rb.linearVelocity = new Vector3(moveInput * speed, rb.linearVelocity.y);
+    //    rb.linearVelocity = new Vector3(moveInputz * speed, rb.linearVelocity.y);
+    //}
+
 
     private void Update()
     {
-        Vector3 movement = new Vector3(
-            moveInput.x,
-            0f,
-            moveInput.y
-        );
-
-        controller.Move(movement * speed * Time.deltaTime);
+        bool emMovimento = inputMovimento.sqrMagnitude > 0.01f;
+        animator.SetBool("iswalking", emMovimento);
     }
 }
 
