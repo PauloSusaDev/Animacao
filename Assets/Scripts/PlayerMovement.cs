@@ -15,6 +15,7 @@ public class PlayerMovement : MonoBehaviour
     //private float moveInputz;
     private Vector2 inputMovimento;
     private Animator animator;
+    private bool estaCorrendo = false;
 
     private void Awake()
     {
@@ -35,12 +36,12 @@ public class PlayerMovement : MonoBehaviour
     {
         animator.SetTrigger("AtacarR");
     }
-    //private void FixedUpdate()
-    //{
-    //    rb.linearVelocity = new Vector3(moveInput * speed, rb.linearVelocity.y);
-    //    rb.linearVelocity = new Vector3(moveInputz * speed, rb.linearVelocity.y);
-    //}
-
+    public void OnRun(InputValue value)
+    {
+        estaCorrendo = value.isPressed;
+        Debug.Log("Esta correndo: " + estaCorrendo);
+        animator.SetBool("Run" +  estaCorrendo, true);
+    }
 
     private void Update()
     {
