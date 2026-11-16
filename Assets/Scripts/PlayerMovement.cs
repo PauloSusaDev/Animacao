@@ -6,13 +6,6 @@ using UnityEngine.InputSystem;
 [RequireComponent(typeof(PlayerInput))]
 public class PlayerMovement : MonoBehaviour
 {
-    //[Header("Controle De Velocidade")]
-    //[SerializeField] private float speed = 5f;
-    //[Header("Força De Pulo")]
-    //[SerializeField] private float ForcaPulo = 5f;
-    //private Rigidbody rb;
-    //private float moveInput;
-    //private float moveInputz;
     private Vector2 inputMovimento;
     private Animator animator;
     private bool estaCorrendo = false;
@@ -20,10 +13,9 @@ public class PlayerMovement : MonoBehaviour
     private void Awake()
     {
         animator = GetComponent<Animator>();
-        //rb = GetComponent<Rigidbody>();
+
     }
 
-    // Recebe o movimento do New Input System
     public void OnMove(InputValue value)
     {
         inputMovimento = value.Get<Vector2>();
@@ -40,13 +32,14 @@ public class PlayerMovement : MonoBehaviour
     {
         estaCorrendo = value.isPressed;
         Debug.Log("Esta correndo: " + estaCorrendo);
-        animator.SetBool("Run" +  estaCorrendo, true);
     }
 
     private void Update()
     {
         bool emMovimento = inputMovimento.sqrMagnitude > 0.01f;
-        animator.SetBool("iswalking", emMovimento);
+        animator.SetBool("iswalking", emMovimento && !estaCorrendo);
+        animator.SetBool("Run", emMovimento && estaCorrendo);
+
     }
 }
 

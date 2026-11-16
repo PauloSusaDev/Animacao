@@ -16,6 +16,19 @@ public class Movimento : MonoBehaviour
         inputMovimento = value.Get<Vector2>();
         Debug.Log("tecla pressionada: " + inputMovimento);
     }
+    public void OnRun(InputValue value)
+    {
+        if (value.isPressed)
+        {
+            velocidade = 10f;
+            Debug.Log("Correndo");
+        }
+        else
+        {
+            velocidade = 5f;
+            Debug.Log("Andando");
+        }
+    }
     void Update()
     {
         movimento.Set(inputMovimento.x, 0, inputMovimento.y);
