@@ -37,7 +37,7 @@ public class PlayerMovement : MonoBehaviour
     private void Update()
     {
         bool emMovimento = inputMovimento.sqrMagnitude > 0.01f;
-        animator.SetBool("iswalking", emMovimento && !estaCorrendo);
+        animator.SetBool("iswalking", emMovimento);
         animator.SetBool("Run", emMovimento && estaCorrendo);
 
     }
