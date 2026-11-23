@@ -36,7 +36,7 @@ public class MovimentoClick : MonoBehaviour
             Ray raio = cameraPrincipal.ScreenPointToRay(posicaoMouse);
 
             // Verifica onde o raio atingiu algum Collider (chão/cenário)
-            if (Physics.Raycast(raio, out RaycastHit hit))
+            if (Physics.Raycast(raio, out RaycastHit hit , 25f))
             {
                 Debug.DrawLine(raio.origin, hit.point, Color.red, 1f);
                 Debug.Log("Clicou collider");
