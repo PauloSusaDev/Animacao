@@ -33,6 +33,14 @@ public class PlayerMovement : MonoBehaviour
         estaCorrendo = value.isPressed;
         Debug.Log("Esta correndo: " + estaCorrendo);
     }
+    public void OnChute(InputValue value)
+    {
+        animator.SetTrigger("Chute");
+    }
+    public void OnChuteGiratorio(InputValue value)
+    {
+        animator.SetTrigger("ChuteGiratorio");
+    }
 
     private void Update()
     {
